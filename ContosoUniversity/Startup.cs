@@ -44,6 +44,7 @@ namespace ContosoUniversity
                     opt.Filters.Add(typeof(ValidatorActionFilter));
                     opt.ModelBinderProviders.Insert(0, new EntityModelBinderProvider());
                 })
+                .SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_2)
                 .AddFeatureFolders()
                 .AddFluentValidation(cfg => { cfg.RegisterValidatorsFromAssemblyContaining<Startup>(); });
         }
